@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_form/LoginForm.dart';
 import 'package:login_form/style.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -48,7 +49,13 @@ class _RegisterPageState extends State<RegisterPage> {
         errormessage = "Phone number cannot be empty";
         isError = true;
       } else {
+        //Registration success — clear errors
         isError = false;
+
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => LoginForm()),
+        );
       }
     });
   }

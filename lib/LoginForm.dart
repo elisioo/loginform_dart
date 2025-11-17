@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_form/AddtoCart.dart';
 import 'package:login_form/HomePage.dart';
 import 'package:login_form/RegisterPage.dart';
 import 'package:login_form/style.dart';
@@ -43,7 +44,7 @@ class _LoginFormState extends State<LoginForm> {
         isError = false;
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => HomePage(username: username)),
+          MaterialPageRoute(builder: (context) => AddToCart()),
         );
       }
     });
@@ -97,7 +98,15 @@ class _LoginFormState extends State<LoginForm> {
                     MaterialPageRoute(builder: (context) => RegisterPage()),
                   );
                 },
-                child: Text('Register here', style: txtstyle3),
+                child: Text(
+                  "Don't have an account? Register",
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                    decoration: TextDecoration.underline,
+                    letterSpacing: 1.2,
+                  ),
+                ),
               ),
             ],
           ),
